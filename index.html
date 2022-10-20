@@ -9,7 +9,14 @@
 </head>
 <body>
 
+    <!-- Titolo -->
+    <h2>
+        CALCOLA IL PREZZO DEL TUO BIGLIETTO
+    </h2>
     
+    Contenitore info cliente
+    <div id="container-infoCliente">
+        <!-- Blocco nome km eta -->
         <div>
             <input type="text" placeholder="nome" id="inputNome">
             <input type="text" placeholder="kilometri" id="inputKm">
@@ -21,19 +28,73 @@
                 <option value="magiorenne">Compreso fra 18 Anni e 65 Anni</option>
             </select>
         </div>
+
+        <!-- Blocco pulsanti Invia -->
+        <div>
+            <button onclick="generaInfoBiglietto()">
+                Genera
+            </button>
+
+            <button onclick="resetParametri()">
+                Anulla
+            </button>
+        </div>
+    </div>
+    
+    <!-- Titolo -->
+    <h2>
+        IL TUO BIGLIETTO
+    </h2>
+
+    <!-- Contenitore info Biglietto -->
+    <div id="container.infoBiglietto">
+        <!-- colonna orizontale 1 -->
+        <div>
+            <h3>DETTAGLIO PASSEGGERI</h3>
+        </div>
+
+        <!-- colonna orizontale 2 -->
+        <div>
+            <!-- colonna di sinsitra -->
+            <div>
+                <h3>NOME PASSEGGERO</h3>
+                <div id="nomePasseggero"></div>
+            </div>
+
+            <!-- Colonna di destra -->
+            <div>
+                <!-- prima -->
+                <div>
+                    <h5>Offerta</h5>
+                    <div id="tipologiaBiglietto"></div>
+                </div>
+
+                <!-- Seconda -->
+                <div>
+                    <h5>Carozza</h5>
+                    <div id="carozza"></div>
+                </div>
+
+                <!-- Terza -->
+                <div>
+                    <h5>Codice CP</h5>
+                    <div id="codiceCP"></div>
+                </div>
+
+                <!-- Quarta -->
+                <div>
+                    <h5>Costo Biglietto</h5>
+                    <div id="prezzoViaggio"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
         
 
-        <button onclick="generaInfoBiglietto()">
-            Genera
-        </button>
-
-        <button>
-            Anulla
-        </button>
+    
    
-        <div id="prezzoViaggio">
-
-        </div>
+    
 
     <script type="text/javascript" src="main.js"></script>
 </body>

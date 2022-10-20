@@ -10,6 +10,7 @@ function generaInfoBiglietto(){
     // Recupero INPUT UTENTE per nome
     let nome = document.getElementById("inputNome").value;
     console.log(nome);
+    document.getElementById("nomePasseggero").innerHTML= nome;
 
     // Recupero INPUT UTENTE per km
     let km = document.getElementById("inputKm").value; 
@@ -27,7 +28,7 @@ function generaInfoBiglietto(){
         prezzoBiglietto= (km * kmPrice) - (km * kmPrice) * 0.2;
 
         // Stampa del prezzo viaggio
-        document.getElementById("prezzoViaggio").innerHTML= `${prezzoBiglietto.toFixed(2)}`
+        document.getElementById("prezzoViaggio").innerHTML= `${prezzoBiglietto.toFixed(2)}`;
         console.log(prezzoBiglietto);
     }
     else if (eta === "over65"){
@@ -35,7 +36,7 @@ function generaInfoBiglietto(){
         prezzoBiglietto= (km * kmPrice) - (km * kmPrice) * 0.4;
 
         // Stampa del prezzo viaggio
-        document.getElementById("prezzoViaggio").innerHTML= `${prezzoBiglietto.toFixed(2)}`
+        document.getElementById("prezzoViaggio").innerHTML= `${prezzoBiglietto.toFixed(2)}`;
         console.log(prezzoBiglietto);
     }
     else{
@@ -43,8 +44,9 @@ function generaInfoBiglietto(){
         prezzoBiglietto= km * kmPrice;
 
         // Stampa del prezzo viaggio
-        document.getElementById("prezzoViaggio").innerHTML= `${prezzoBiglietto.toFixed(2)}`
+        document.getElementById("prezzoViaggio").innerHTML= `${prezzoBiglietto.toFixed(2)}`;
         console.log(prezzoBiglietto);
+        
     }
 }
 
