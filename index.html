@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biglietto Treno Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+        <div>
+            <input type="text" placeholder="nome" id="inputNome">
+            <input type="text" placeholder="kilometri" id="inputKm">
+
+            <label for="eta">Seleziona Fascia di eta:</label>
+            <select id="eta">
+                <option value="minorenne">Meno di 18 Anni</option>
+                <option value="over65">Piu di 65 Anni</option>
+                <option value="magiorenne">Compreso fra 18 Anni e 65 Anni</option>
+            </select>
+        </div>
+        
+
+        <button onclick="generaInfoBiglietto()">
+            Genera
+        </button>
+
+        <button>
+            Anulla
+        </button>
+   
+
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
