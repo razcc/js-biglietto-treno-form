@@ -1,101 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biglietto Treno Form</title>
+    <!-- Style Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Style nostro -->
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- Titolo -->
-    <h2>
-        CALCOLA IL PREZZO DEL TUO BIGLIETTO
-    </h2>
-    
-    Contenitore info cliente
-    <div id="container-infoCliente">
-        <!-- Blocco nome km eta -->
-        <div>
-            <input type="text" placeholder="nome" id="inputNome">
-            <input type="text" placeholder="kilometri" id="inputKm">
+    <div class="container-fluid bg-pink vh-100 ">
 
-            <label for="eta">Seleziona Fascia di eta:</label>
-            <select id="inputEta">
-                <option value="minorenne">Meno di 18 Anni</option>
-                <option value="over65">Piu di 65 Anni</option>
-                <option value="magiorenne">Compreso fra 18 Anni e 65 Anni</option>
-            </select>
+        <!-- Row 1 -->
+        <!-- Titolo -->
+        <div class="row py-5 text-white text-center">
+            <h2>
+                CALCOLA IL PREZZO DEL TUO BIGLIETTO
+            </h2>
         </div>
 
-        <!-- Blocco pulsanti Invia -->
-        <div>
-            <button onclick="generaInfoBiglietto()">
-                Genera
-            </button>
+        <!-- Row 2 -->
+        <!-- Contenitore info cliente -->
+        <div id="container-infoCliente" class="row bg-light w-50 mx-auto rounded-4 text-center ">
 
-            <button onclick="resetParametri()">
-                Anulla
-            </button>
+            <!-- Blocco nome km eta -->
+            <div class="col-12 my-4 d-flex justify-content-center">
+                <div>
+                    <div class="my-4">
+                        Nome e Cognome
+                    </div>
+                    <input type="text" placeholder="nome" id="inputNome">
+                </div>
+
+                <div>
+                    <div class="my-4">
+                        Km da percorrere
+                    </div>
+                    <input type="text" placeholder="kilometri" id="inputKm">
+                </div>
+
+                <div>
+                    <div class="my-4">
+                        Fascia d'età
+                    </div>
+                    <select id="inputEta">
+                        <option value="minorenne">Meno di 18 Anni</option>
+                        <option value="over65">Piu di 65 Anni</option>
+                        <option value="magiorenne">Compreso fra 18 Anni e 65 Anni</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Blocco pulsanti Invia -->
+            <div class="col-12 textcenter">
+                <button onclick="generaInfoBiglietto()">
+                    Genera
+                </button>
+
+                <button>
+                    Anulla
+                </button>
+            </div>
         </div>
-    </div>
-    
-    <!-- Titolo -->
-    <h2>
-        IL TUO BIGLIETTO
-    </h2>
 
-    <!-- Contenitore info Biglietto -->
-    <div id="container.infoBiglietto">
-        <!-- colonna orizontale 1 -->
-        <div>
-            <h3>DETTAGLIO PASSEGGERI</h3>
+        <!-- Row 3 -->
+        <div class="text-white mt-5 text-center">
+            <!-- Titolo -->
+            <h2>
+                IL TUO BIGLIETTO
+            </h2>
         </div>
 
-        <!-- colonna orizontale 2 -->
-        <div>
-            <!-- colonna di sinsitra -->
-            <div>
-                <h3>NOME PASSEGGERO</h3>
+
+        <!-- Row 4 -->
+        <!-- Contenitore info Biglietto -->
+        <div id="container.infoBiglietto" class="row bg-light w-50 mx-auto p-3">
+
+            <!-- Colonna 1 -->
+            <div class="col-12 pt-4">
+                <h3>DETTAGLIO PASSEGGERI</h3>
+
+            </div>
+
+            <!-- colonna  2 -->
+            <div class="col-4 bg-secondary px-4 pt-4 pb-5">
+                <h3>Nome Passeggero</h3>
                 <div id="nomePasseggero"></div>
             </div>
 
-            <!-- Colonna di destra -->
-            <div>
-                <!-- prima -->
-                <div>
-                    <h5>Offerta</h5>
-                    <div id="tipologiaBiglietto"></div>
-                </div>
+            <!-- colonna 3 --> 
+            <div class="col-8 border border-dark">
+                <div class="container-fluid">
+                    <div class="row">
 
-                <!-- Seconda -->
-                <div>
-                    <h5>Carozza</h5>
-                    <div id="carozza"></div>
-                </div>
+                        <!-- prima -->
+                        <div class="col">
+                            <h5>Offerta</h5>
+                            <div id="tipologiaBiglietto"></div>
+                        </div>
 
-                <!-- Terza -->
-                <div>
-                    <h5>Codice CP</h5>
-                    <div id="codiceCP"></div>
-                </div>
+                        <!-- Seconda -->
+                        <div class="col">
+                            <h5>Carozza</h5>
+                            <div id="carozza"></div>
+                        </div>
 
-                <!-- Quarta -->
-                <div>
-                    <h5>Costo Biglietto</h5>
-                    <div id="prezzoViaggio"></div>
+                        <!-- Terza -->
+                        <div class="col">
+                            <h5>Codice CP</h5>
+                            <div id="codiceCP"></div>
+                        </div>
+
+                        <!-- Quarta -->
+                        <div class="col">
+                            <h5>Costo Biglietto</h5>
+                            <div id="prezzoViaggio"></div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
 
-        
 
-    
-   
-    
 
+    <!-- Scrip Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    <!-- Script Nostro -->
     <script type="text/javascript" src="main.js"></script>
 </body>
+
 </html>
